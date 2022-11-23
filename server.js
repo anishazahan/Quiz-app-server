@@ -11,3 +11,7 @@ app.get('/',(req,res)=>{
         res.json(error)
     }
 })
+
+app.listen(5000,()=>{
+    console.log("server is running");
+})
