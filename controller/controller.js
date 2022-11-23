@@ -30,7 +30,13 @@ export async function insertQuestions (req,res){
 ///--------delete all questions--------
 
 export async function dropQuestions(req,res){
-    res.json('delet question')
+   try {
+       await  Questions.deleteMany()
+       res.json({ msg : " Questions Deleted Successfully...!"})
+
+    } catch (error) {
+            res.json({error});
+    }
 }
 
 ///--------get  all result--------
