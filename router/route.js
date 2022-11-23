@@ -10,7 +10,10 @@ import * as controller from '../controller/controller.js';
 
 ////---------questions routes--------
 
-router.get('/questions',controller.getQuestions)
+
+router.route('/questions')
+       .get(controller.getQuestions)//---get requst
+       .post(controller.insertQuestions) //----post requst
 
 
 
