@@ -39,10 +39,18 @@ export async function dropQuestions(req,res){
     }
 }
 
+
+
 ///--------get  all result--------
 
 export async function getResult(req,res){
-    res.json('get result question')
+    try {
+        const result = await Results.find()
+        res.json(result);
+        
+    } catch (error) {
+        res.json({error})
+    }
 }
 ///--------post  all result--------
 
