@@ -71,5 +71,11 @@ export async function storeResult(req,res){
 ///--------delete all result--------
 
 export async function dropResult(req,res){
-    res.json('drop result with delete api')
+  try {
+    await Results.deleteMany();
+    res.json({msg:"Result deleted successfully..!"})
+
+  } catch (error) {
+    res.json({error})
+  }
 }
