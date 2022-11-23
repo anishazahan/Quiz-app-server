@@ -1,5 +1,5 @@
 
-export default  [
+export const questions = [
     {
             id:1,
             question:"Javascript is an ____________ language",
@@ -46,5 +46,7 @@ export default  [
             ]
     }
 ]
+
+export const answers = [0,1,2,1,0];
 
 
