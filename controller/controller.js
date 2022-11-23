@@ -1,15 +1,30 @@
+import Questions from "../models/questionSchema.js"
+import Results from "../models/resultSchema.js"
+
 
 
 //---------get all question-----
 
 export async function getQuestions(req,res){
-    res.json('questions api get requst')
+    try {
+      const ques = await  Questions.find()
+      res.json (ques)
+    } catch (error) {
+        res.json({error});
+    }
 }
 
 //---------insert all question-----
 
 export async function insertQuestions (req,res){
-    res.json('post questions')
+    try {
+        Questions.insertMany({questions : [0], answers : [1] },function(err,data){
+            res.json({ msg : 'Data Saved Successfully...!'})
+        } )
+       
+      } catch (error) {
+          res.json({error});
+      }
 }
 
 ///--------delete all questions--------

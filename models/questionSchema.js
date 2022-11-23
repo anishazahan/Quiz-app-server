@@ -10,4 +10,4 @@ const questionModel = new Schema({
     answers : {type : Array, default : []},
     createAt : {type : Date ,default : Date.now }
 });
-export const Questions = mongoose.model('Question',questionModel)
+export default mongoose.model('Question',questionModel)
