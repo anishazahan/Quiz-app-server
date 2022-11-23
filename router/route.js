@@ -14,6 +14,7 @@ import * as controller from '../controller/controller.js';
 router.route('/questions')
        .get(controller.getQuestions)//---get requst
        .post(controller.insertQuestions) //----post requst
+       .delete(controller.dropQuestions)//----delete requst
 
 
 
