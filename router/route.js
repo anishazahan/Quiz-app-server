@@ -1,11 +1,16 @@
 import { Router } from "express";
 const router = Router();
 
+////---------import controller--------
+
+import * as controller from '../controller/controller.js';
+
+
+
+
 ////---------questions routes--------
 
-router.get('/questions',(req,res)=>{
-    res.json('questions api get requst')
-})
+router.get('/questions',controller.getQuestions)
 
 
 
