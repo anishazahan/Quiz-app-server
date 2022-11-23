@@ -19,7 +19,7 @@ config();
 
 //-----------application port---
 const port = process.env.PORT || 5001;
-connect();
+
 
 ///------routes------
 
@@ -39,6 +39,20 @@ app.get('/',(req,res)=>{
     }
 })
 
-app.listen(port,()=>{
-    console.log("server is running");
+//-----start server only when we have valid connection---
+
+connect().then(()=>{
+
+    try {
+        app.listen(port,()=>{
+            console.log("server is running");
+        })
+        
+    } catch (error) {
+        console.log(" can't connect to the server")
+    }
+
+}).catch(error=>{
+    console.log('Invalid database connection');
 })
+
