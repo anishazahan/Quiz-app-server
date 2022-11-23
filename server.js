@@ -1,6 +1,19 @@
 import express from 'express';
+import morgan from 'morgan'
+import cors from 'cors'
+import { config } from 'dotenv';
+
 const app = express();
 
+
+//---middleware--
+app.use(morgan ('tiny'));
+app.use(cors());
+app.use(express.json());
+config();
+
+//-----------application port---
+const port = process.env.PORT || 5001;
 
 ///------route------
 
@@ -12,6 +25,6 @@ app.get('/',(req,res)=>{
     }
 })
 
-app.listen(5000,()=>{
+app.listen(port,()=>{
     console.log("server is running");
 })
