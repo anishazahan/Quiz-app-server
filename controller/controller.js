@@ -55,8 +55,19 @@ export async function getResult(req,res){
 ///--------post  all result--------
 
 export async function storeResult(req,res){
-    res.json('store result with post api')
+    try {
+     const {username,result,attempts,points,achived} =  req.body;
+     if(!username && !result ) throw new Error('Data not Provided..!')
+     Results.create({username,result,attempts,points,achived}, function (err,data){
+        res.json({msg :'Result save Successfully..!'})
+     })
+    } catch (error) {
+        res.json({error})
+    }
 }
+
+
+
 ///--------delete all result--------
 
 export async function dropResult(req,res){
