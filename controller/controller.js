@@ -23,3 +23,8 @@ export async function dropQuestions(req,res){
 export async function getResult(req,res){
     res.json('get result question')
 }
+///--------post  all result--------
+
+export async function storeResult(req,res){
+    res.json('store result with post api')
+}
