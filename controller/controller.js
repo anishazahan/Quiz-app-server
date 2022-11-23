@@ -28,3 +28,8 @@ export async function getResult(req,res){
 export async function storeResult(req,res){
     res.json('store result with post api')
 }
+///--------delete all result--------
+
+export async function dropResult(req,res){
+    res.json('drop result with delete api')
+}
