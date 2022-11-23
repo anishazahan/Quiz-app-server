@@ -17,3 +17,9 @@ export async function insertQuestions (req,res){
 export async function dropQuestions(req,res){
     res.json('delet question')
 }
+
+///--------get  all result--------
+
+export async function getResult(req,res){
+    res.json('get result question')
+}

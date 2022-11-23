@@ -16,6 +16,8 @@ router.route('/questions')
        .post(controller.insertQuestions) //----post requst
        .delete(controller.dropQuestions)//----delete requst
 
+       router.route('/result')
+       .get(controller.getResult)
 
 
 export default router;
