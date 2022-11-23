@@ -4,6 +4,10 @@ import cors from 'cors'
 import { config } from 'dotenv';
 import router from './router/route.js';
 
+//-------mongodb connect--------
+
+import connect from './database/connection.js';
+
 const app = express();
 
 
@@ -15,6 +19,7 @@ config();
 
 //-----------application port---
 const port = process.env.PORT || 5001;
+connect();
 
 ///------routes------
 
