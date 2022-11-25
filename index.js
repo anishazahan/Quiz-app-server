@@ -23,10 +23,10 @@ const port = process.env.PORT || 5001;
 
 ///------routes------
 
-app.use('/api',router)
+app.use('/api/api',router)
 
 
-app.get('/',(req,res)=>{
+app.get('/api/',(req,res)=>{
     try {
         res.json('get requst')
     } catch (error) {
