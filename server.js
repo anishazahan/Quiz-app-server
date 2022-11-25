@@ -26,11 +26,6 @@ const port = process.env.PORT || 5001;
 app.use('/api',router)
 
 
-
-
-
-
-
 app.get('/',(req,res)=>{
     try {
         res.json('get requst')
