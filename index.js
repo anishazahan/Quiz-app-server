@@ -2,7 +2,13 @@ import express from 'express';
 import morgan from 'morgan'
 import cors from 'cors'
 import { config } from 'dotenv';
+
+//-----------application port---
+const port = process.env.PORT || 5001;
+
 import router from './router/route.js';
+
+
 
 //-------mongodb connect--------
 
@@ -17,8 +23,7 @@ app.use(cors());
 app.use(express.json());
 config();
 
-//-----------application port---
-const port = process.env.PORT || 5001;
+
 
 
 ///------routes------
@@ -26,7 +31,7 @@ const port = process.env.PORT || 5001;
 app.use('/api/api',router)
 
 
-app.get('/api/',(req,res)=>{
+app.get('/',(req,res)=>{
     try {
         res.json('get requst')
     } catch (error) {
