@@ -28,7 +28,7 @@ config();
 
 ///------routes------
 
-app.use('/api/api',router)
+app.use('/api',router)
 
 
 app.get('/',(req,res)=>{
